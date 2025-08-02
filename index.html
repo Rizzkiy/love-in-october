@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lirik Romantis Buat Sayang 💘</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #1a1a1a 0%, #3a003a 100%);
+      color: #fff;
+      font-family: 'Poppins', 'Courier New', monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #intro {
+      font-size: 2em;
+      color: #fff; /* dari #ff87d6 */
+      text-shadow: 0 0 6px #222, 0 0 12px #ff87d6; /* lebih soft */
+      background: rgba(30, 0, 30, 0.25); /* lebih gelap */
+      white-space: nowrap;
+      border-right: 2px solid #ff87d6;
+      overflow: hidden;
+      width: 0;
+      animation: typing 3s steps(40, end) forwards, blink 0.75s step-end infinite;
+      border-radius: 12px;
+      padding: 12px 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 32px 0 rgba(255, 135, 214, 0.25);
+      backdrop-filter: blur(2px);
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 27ch; }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent; }
+      50% { border-color: #ff87d6; }
+    }
+
+    #lyrics {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+      background: rgba(255,255,255,0.07);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(255, 179, 236, 0.15);
+      padding: 30px 40px;
+      backdrop-filter: blur(3px);
+      border: 1.5px solid rgba(255,255,255,0.15);
+    }
+
+    .line {
+      margin: 10px 0;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      color: #fff; /* dari #ffb3ec */
+      text-shadow: 0 0 6px #222, 0 0 10px #ff69b4; /* lebih soft */
+      background: rgba(30, 0, 30, 0.18); /* sedikit gelap di belakang teks */
+      font-size: 1.2em;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border-radius: 8px;
+      padding: 4px 12px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #love-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+      color: #fff;
+      text-shadow: 0 0 25px #ff69b4, 0 0 50px #fff;
+      opacity: 0;
+      font-family: 'Pacifico', cursive, sans-serif;
+      z-index: 10;
+      pointer-events: none;
+      letter-spacing: 2px;
+      transition: opacity 1s;
+    }
+    #love-text.show {
+      opacity: 1;
+      animation: loveFadeIn 2s forwards, loveGlow 2s 2s infinite alternate;
+      pointer-events: auto;
+    }
+    @keyframes loveFadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%) scale(0.8);}
+      to { opacity: 1; transform: translate(-50%, -50%) scale(1);}
+    }
+    @keyframes loveGlow {
+      from { text-shadow: 0 0 25px #ff69b4, 0 0 50px #fff; }
+      to { text-shadow: 0 0 50px #ff69b4, 0 0 80px #fff; }
+    }
+
+    .flower {
+      position: absolute;
+      bottom: -80px;
+      width: 60px;
+      height: 60px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+    .flower.f1 { left: 15%;}
+    .flower.f2 { left: 30%;}
+    .flower.f3 { left: 50%;}
+    .flower.f4 { left: 70%;}
+    .flower.f5 { left: 85%;}
+    .flower.show {
+      opacity: 1;
+      animation: bloom 2.5s cubic-bezier(.68,-0.55,.27,1.55) forwards;
+    }
+    .flower.f1.show { animation-delay: 0.2s;}
+    .flower.f2.show { animation-delay: 0.6s;}
+    .flower.f3.show { animation-delay: 1.0s;}
+    .flower.f4.show { animation-delay: 0.4s;}
+    .flower.f5.show { animation-delay: 0.8s;}
+    @keyframes bloom {
+      0% { opacity: 0; transform: translateY(0) scale(0.5) rotate(-30deg);}
+      60% { opacity: 1; transform: translateY(-120px) scale(1.1) rotate(10deg);}
+      80% { opacity: 1; transform: translateY(-140px) scale(1) rotate(-10deg);}
+      100% { opacity: 1; transform: translateY(-160px) scale(1) rotate(0);}
+    }
+
+    #love-text, .flower {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s;
+    }
+    #love-text.show, .flower.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="intro">Untuk seseroang yang aku sayang</div>
+
+  <div id="love-text">I love you</div>
+
+  <div class="flower f1">
+    <svg viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="10" fill="#ffb3ec"/>
+      <ellipse cx="30" cy="15" rx="8" ry="15" fill="#ff69b4" opacity="0.7"/>
+      <ellipse cx="30" cy="45" rx="8" ry="15" fill="#ff69b4" opacity="0.7"/>
+      <ellipse cx="15" cy="30" rx="15" ry="8" fill="#ff69b4" opacity="0.7"/>
+      <ellipse cx="45" cy="30" rx="15" ry="8" fill="#ff69b4" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="flower f2">
+    <svg viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="10" fill="#ffe3f7"/>
+      <ellipse cx="30" cy="15" rx="8" ry="15" fill="#ff87d6" opacity="0.7"/>
+      <ellipse cx="30" cy="45" rx="8" ry="15" fill="#ff87d6" opacity="0.7"/>
+      <ellipse cx="15" cy="30" rx="15" ry="8" fill="#ff87d6" opacity="0.7"/>
+      <ellipse cx="45" cy="30" rx="15" ry="8" fill="#ff87d6" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="flower f3">
+    <svg viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="10" fill="#fff0f6"/>
+      <ellipse cx="30" cy="15" rx="8" ry="15" fill="#ffb3ec" opacity="0.7"/>
+      <ellipse cx="30" cy="45" rx="8" ry="15" fill="#ffb3ec" opacity="0.7"/>
+      <ellipse cx="15" cy="30" rx="15" ry="8" fill="#ffb3ec" opacity="0.7"/>
+      <ellipse cx="45" cy="30" rx="15" ry="8" fill="#ffb3ec" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="flower f4">
+    <svg viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="10" fill="#ffd6f5"/>
+      <ellipse cx="30" cy="15" rx="8" ry="15" fill="#ff69b4" opacity="0.7"/>
+      <ellipse cx="30" cy="45" rx="8" ry="15" fill="#ff69b4" opacity="0.7"/>
+      <ellipse cx="15" cy="30" rx="15" ry="8" fill="#ff69b4" opacity="0.7"/>
+      <ellipse cx="45" cy="30" rx="15" ry="8" fill="#ff69b4" opacity="0.7"/>
+    </svg>
+  </div>
+  <div class="flower f5">
+    <svg viewBox="0 0 60 60">
+      <circle cx="30" cy="30" r="10" fill="#fff0f6"/>
+      <ellipse cx="30" cy="15" rx="8" ry="15" fill="#ff87d6" opacity="0.7"/>
+      <ellipse cx="30" cy="45" rx="8" ry="15" fill="#ff87d6" opacity="0.7"/>
+      <ellipse cx="15" cy="30" rx="15" ry="8" fill="#ff87d6" opacity="0.7"/>
+      <ellipse cx="45" cy="30" rx="15" ry="8" fill="#ff87d6" opacity="0.7"/>
+    </svg>
+  </div>
+
+  <div id="lyrics">
+    <div class="line" style="animation-delay: 1s;">My girl, my girl, my girl</div>
+    <div class="line" style="animation-delay: 6s;">You will be my girl</div>
+    <div class="line" style="animation-delay: 8s;">My girl, my girl, my girl</div>
+    <div class="line" style="animation-delay: 14s;">You will be my world</div>
+    <div class="line" style="animation-delay: 16s;">My world, my world, my world</div>
+    <div class="line" style="animation-delay: 21s;">You will be my girl</div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('lyrics').style.display = 'flex';
+    }, 4000);
+
+    setTimeout(() => {
+      document.getElementById('lyrics').style.display = 'none';
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('love-text').classList.add('show');
+      document.querySelectorAll('.flower').forEach(f => f.classList.add('show'));
+    }, 26000);
+  </script>
+</body>
+</html>
